@@ -2,8 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
-gem 'thin'
-
 group :production do
   gem 'pg'
 end
