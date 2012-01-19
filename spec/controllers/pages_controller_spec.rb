@@ -10,6 +10,7 @@ describe PagesController do
       get 'home'
       response.should be_success
     end
+  end
     
     it "should have the right title" do
       get 'home'
@@ -50,7 +51,7 @@ describe PagesController do
     it "should have the right title" do
       get 'about'
       response.should have_selector("title", 
-                                                :content => "#{base_title} | About Us"
+                                                :content => "#{base_title} | About Us")
       end
       
     it "should have a nonblank body" do
