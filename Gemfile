@@ -14,6 +14,7 @@ end
 # in production environments by default.
 group :development do
   gem 'rspec-rails'
+  gem 'annotate'
 end
 
 group :test do
