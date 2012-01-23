@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 class User < ActiveRecord::Base
-=======
+
 #id :integer
 #name :string
 #email :string
@@ -55,6 +55,6 @@ class User < ActiveRecord::Base
       Digest::SHA2.hexdigest(string)
     end
     
-    
->>>>>>> modeling-users
+  end
+
 end
