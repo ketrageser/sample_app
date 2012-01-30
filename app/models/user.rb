@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 #email :string
 #created_at :datatime
 #updated_at :datatime
+#password :string
+#password_confirmation :string
 #encrypted_password :string
 
 class User < ActiveRecord::Base
