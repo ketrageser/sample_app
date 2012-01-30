@@ -1,9 +1,8 @@
 require 'spec_helper'
 
-<<<<<<< HEAD
 describe User do
   pending "add some examples to (or delete) #{__FILE__}"
-=======
+
 describe User do
   
   before(:each) do
@@ -153,7 +152,7 @@ describe User do
   end
       
       
+  end
   
-  
->>>>>>> modeling-users
+
 end
