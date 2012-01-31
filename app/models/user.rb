@@ -1,14 +1,13 @@
-
 class User < ActiveRecord::Base
 
-#id :integer
-#name :string
-#email :string
-#created_at :datatime
-#updated_at :datatime
-#password :string
-#password_confirmation :string
-#encrypted_password :string
+  #id :integer
+  #name :string
+  #email :string
+  #created_at :datatime
+  #updated_at :datatime
+  #password :string
+  #password_confirmation :string
+  #encrypted_password :string
 
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
@@ -54,7 +53,6 @@ class User < ActiveRecord::Base
     def secure_hash(string)
       Digest::SHA2.hexdigest(string)
     end
-    
 
 
 end
