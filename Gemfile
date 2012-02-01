@@ -4,10 +4,12 @@ gem 'rails', '3.1.1'
 gem 'gravatar_image_tag'
 gem 'compass'
 gem 'haml'
+gem 'will_paginate', '3.0.pre'
 
 group :production do
   gem 'pg'
 end
+
 group :development, :test do
   gem 'sqlite3'
 end
@@ -18,6 +20,7 @@ end
 group :development do
   gem 'rspec-rails'
   gem 'annotate'
+  gem 'faker', '0.3.1'
 end
 
 group :test do
