@@ -5,6 +5,7 @@ gem 'gravatar_image_tag'
 gem 'compass'
 gem 'haml'
 gem 'will_paginate', '3.0.pre'
+gem 'jquery-rails'
 
 group :production do
   gem 'pg'
