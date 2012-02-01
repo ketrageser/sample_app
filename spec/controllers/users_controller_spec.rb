@@ -155,28 +155,48 @@ describe UsersController do
         response.should have_selector('title', :content => "Edit user")
       end
     end
+      
+    describe "success" do
+      
+      before(:each) do
+        @attr = { :name => "New Name", :email => "user@example.org",
+                        :password => "barbaz", :password_confirmation => "barbaz" }
+      end
+
+      it "should change the user's attributes" do
+        put :update, :id => @user, :user => @attr
+        user = assigns(:user)
+        @user.reload
+        @user.name.should == user.name
+        @user.email.should == user.email
+        @user.encrypted_password.should == user.encrypted_password
+      end
+      
+      it "should have a flash message" do
+        put :update, :id => @user, :user => @attr
+        flash[:success].should =~ /updated/
+      end
+    end
   end
   
-  describe "success" do
+  describe "authentication of edit/update actions" do
     
     before(:each) do
-      @attr = { :name => "New Name", :email => "user@example.org",
-                      :password => "barbaz", :password_confirmation => "barbaz" }
-    end
-
-    it "should change the user's attributes" do
-      put :update, :id => @user, :user => @attr
-      user = assigns(:user)
-      @user.reload
-      @user.name.should == user.name
-      @user.email.should == user.email
-      @user.encrypted_password.should == user.encrypted_password
+      @user = Factory(:user)
     end
     
-    it "should have a flash message" do
-      put :update, :id => @user, :user => @attr
-      flash[:success].should =~ /updated/
+    it "should deny access to 'edit'" do
+      get :edit, :id => @user
+      response.should redirect_to(signin_path)
+      flash[:notice].should =~ /sign in/i
+    end
+    
+    it "should deny access to 'update'" do
+      put :update, :id => @user, :user => {}
+      resposne.should redirect_to(signin_path)
     end
   end
+  
+  
 
 end
