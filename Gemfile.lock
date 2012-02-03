@@ -140,7 +140,7 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
-    will_paginate (3.0.pre2)
+    will_paginate (3.0.0)
 
 PLATFORMS
   x86-mingw32
@@ -161,4 +161,4 @@ DEPENDENCIES
   sqlite3 (= 1.3.4)
   uglifier
   webrat (= 0.7.1)
-  will_paginate (= 3.0.pre2)
+  will_paginate (= 3.0)
