@@ -20,7 +20,7 @@ describe UsersController do
         Factory(:user, :email => "another@example.net")
         
         30.times do
-          Factory(:user, :email = Factory.next(:email))
+          Factory(:user, :email => Factory.next(:email))
         end
       end
       
