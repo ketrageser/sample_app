@@ -14,13 +14,14 @@ class User < ActiveRecord::Base
   
   has_many :microposts, :dependent => :destroy
   
+  
   email_regex = /\A[\w+\-.]+@[a-z.\d\-]+\.[a-z]+\z/i
-  validate :name, :presence => true,
+  validates :name, :presence => true,
                           :length => { :maximum => 50}
-  validate :email, :presence => true,
+  validates :email, :presence => true,
                           :format => { :with => email_regex },
                           :uniqueness => { :case_sensitive => false }
-  validate :password, :presence => true,
+  validates :password, :presence => true,
                               :confirmation => true,
                               :length => { :within => 6..40}
   before_save :encrypt_password
