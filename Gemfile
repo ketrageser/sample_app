@@ -10,7 +10,6 @@ gem 'will_paginate', '3.0'
 gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
-gem 'sqlite3', '1.3.4'
 
 gem 'jquery-rails'
 
