@@ -91,7 +91,7 @@ describe UsersController do
       it "should destory the micropost" do
         lambda do
           delete :destroy, :id => @micropost
-          flash[:success].should =~ /deleted/i
+          flash[:success].should =~ /delete/i
           response.should redirect_to(root_path)
         end.should change(Micropost, :count).by(-1)
       end
